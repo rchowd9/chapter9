@@ -5,9 +5,14 @@ public void printReceipt(double price, int quantity)
     displayReceipt(quantity, total);
     
     // Apply discount if quantity > 10
-    if (quantity > 10) 
+    private double calculateTotal(double price, int quantity) 
     {
-        total = total * 0.9;
+        double total = price * quantity;
+        if (quantity > 10) 
+        {
+            total *= 0.9;
+        }
+        return total;
     }
 
     // Print receipt
